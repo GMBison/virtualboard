@@ -1,0 +1,8 @@
+# VirtualBoard verification notes
+
+- Test MCP twice. The SDK client checks the protocol and payload, but the installed Codex host must also expose the tool. Codex skipped a discriminated union with tuple input even though the SDK test passed. The tool now uses a flat action schema and delegates per-action validation to the shared transaction validator.
+- Run `npm run package:plugin` after updating the skill, the server, or browser assets. Reinstall the local plugin to give the desktop client the new copy. The packaged MCP is bundled, while the Node HTTP server and browser assets are copied with their relative layout.
+- Treat canvas dimensions and display zoom independently. Store wrapping width with each ink mark so resizing preserves existing line breaks. Use the active page ID as a precondition on writes and test stale-page rejection.
+- Lesson writes can turn a nearly full page within the same durable transaction. The live event starts the new page blank and then plays its first strokes. Readers that reconnect get the complete page. Use annotation placement to keep comments on the existing page.
+- Verify output on both Chromium and Brave with the same browser suite. The actual Codex in-app browser uses the loopback URL. The browser suite stubs the speech engine to verify narration timing and cancellation independently of installed voices. A native Voice conversation and audible playback require a live desktop check.
+- When using the standalone CLI for a fresh-chat smoke test, select a supported model from the local model list if the CLI's inherited default is rejected. If the tab is already open, say so to avoid exercising desktop browser tooling from the isolated CLI. Verify the resulting board revision and marks after the tool call.

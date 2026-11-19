@@ -1,0 +1,4 @@
+node_modules/
+.virtualboard/
+artifacts/
+/plugins/virtualboard/

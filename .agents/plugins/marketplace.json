@@ -1,0 +1,20 @@
+{
+  "name": "virtualboard-local",
+  "interface": {
+    "displayName": "VirtualBoard Local"
+  },
+  "plugins": [
+    {
+      "name": "virtualboard",
+      "source": {
+        "source": "local",
+        "path": "./plugins/virtualboard"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Education"
+    }
+  ]
+}

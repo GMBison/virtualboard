@@ -1,0 +1,25 @@
+{
+  "name": "virtualboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "board": "node board.mjs",
+    "test": "node --test test/server.test.mjs",
+    "test:browser": "node --test test/browser.test.mjs",
+    "package:plugin": "node scripts/package-plugin.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "@resvg/resvg-wasm": "^2.6.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "playwright": "^1.65.1"
+  }
+}
